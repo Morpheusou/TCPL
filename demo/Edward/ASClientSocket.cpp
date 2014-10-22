@@ -32,8 +32,8 @@ bool ASClientSocket::startClientSocket( std::string address )
 		CCLOG("Edward %s", "ASClientSocket connect failed!");
 	}
 
-	ASThread *thread = new ASClientThread(clientSocket);
-	thread->startASThread();
+	ASClientThread thread(clientSocket);
+	thread.startASThread();
 	return true;
 }
 
